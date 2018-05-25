@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<field platform="lianjia">
+	<field name="title" xpath='/html/body/div[4]/div[1]/div[2]/h2/text()'
+		   resultType="string"/>
+	<field name="houseList" xpath='/html/body/div[4]/div[1]/ul/li[@class="clear"]' resultType="list">
+		<events>
+			<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="2"/>
+		</events>
+		<paging>
+			<field name="totalPage"  xpath='/html/body/div[4]/div[1]/div[8]/div[2]/div/a[last()-1]/text()' resultType="string" />
+			<field name="totalCount"  xpath='' resultType="string"  regexp=""/>
+			<field name="pageSize" value="30"/>
+			<field name="turnPageTrigger" waitingTimes="3"  xpath='/html/body/div[4]/div[1]/div[8]/div[2]/div//a[last()]' event="click"/>
+		</paging>
+
+		<field resultType="object">
+			<field name="title" xpath='./div[1]/div[1]/a/text()' resultType="string"/>
+			<field name="price" xpath='./div[1]/div[6]/div[1]/span/text()' resultType="string"/>
+			<field name="unit_price" xpath='./div[1]/div[6]/div[2]/span/text()' resultType="string"/>
+		</field>
+
+	</field>
+</field>

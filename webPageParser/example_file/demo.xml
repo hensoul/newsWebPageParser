@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--抓取链家数据-->
+<field platform="lianjia">
+	<field name="area" xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[2]/div[1]/span[1]/text()'
+		   resultType="string"/>
+	<field name="houseNum" xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[2]/ul/li[1]/div[2]/span[1]/text()'
+		   resultType="string" />
+	<field name="dealHouse" xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[2]/ul/a/li/div[2]/span[1]/text()'
+		   resultType="string" />
+	<field name="lookedNum" xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[2]/ul/li[2]/div[2]/span[1]/text()'
+		   resultType="string" />
+	<field name="houseList" xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[1]/ul/li' resultType="list">
+		<events>
+			<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="2"/>
+		</events>
+		<paging>
+			<field name="totalPage"  xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[1]/div[2]/a[last()-1]/text()' resultType="string" />
+			<field name="totalCount"  xpath='' resultType="string"  regexp=""/>
+			<field name="pageSize" value="30"/>
+			<field name="turnPageTrigger" waitingTimes="3"  xpath='//*[@id="js-ershoufangList"]/div[2]/div[3]/div[1]/div[2]/a[last()]' event="click"/>
+		</paging>
+
+		<field resultType="object">
+			<field name="price" xpath='./div/div[2]/div[1]/div/span[1]/text()' resultType="string"/>
+			<field name="unit_price" xpath='./div/div[2]/div[2]/span[2]/text()' resultType="string"/>
+			<field name="title" xpath='./div/div[1]/a/text()' resultType="string"/>
+			<field name="house_detail" xpath='./div/div[2]/div[1]/span/text()' resultType="string"/>
+			<field name="desc" xpath='./div/div[3]/text()' resultType="string"/>
+			<field name="key" xpath='./div/div[1]/a/@key' resultType="string"/>
+		</field>
+
+	</field>
+</field>
