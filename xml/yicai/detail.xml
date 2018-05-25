@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<field>
+	<field name="title" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/h1/text()' resultType="text">
+		<!--events>
+			<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="5"/>
+		</events-->
+	</field>
+	<field name="source" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/h2/i/text()' resultType="text"/>
+	<field name="column" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/h2/a/text()' resultType="text"/>
+	<field name="dateTime" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/h2/span[2]/text()' resultType="text"/>
+	<field name="commentNum" xpath='//*[@id="changyan_count_unit"]/text()' resultType="string"/>
+	<field name="content" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]' resultType="textContent"/>
+	<field name="creator" xpath='/html/body/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/h2/span[1]/text()' resultType="text"/>
+	
+</field>

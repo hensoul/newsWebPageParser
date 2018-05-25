@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<field platform="people_website">
+	<field name="articleList" xpath='/html/body/div[22]/div[1]/div[@class="headingNews qiehuan1_c"]' resultType="list" extend="true">
+		<events>
+			<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="5"/>
+		</events>
+		<paging>
+			<events>
+				<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="2"/>
+			</events>
+			<field name="totalPage"  xpath='' value='100' resultType="text" />
+			<field name="totalCount"  xpath='' resultType="string"  regexp=""/>
+			<field name="pageSize" value=""/>
+			<field name="turnPageTrigger" waitingTimes="3"
+				   xpath='//div[@class="headingNews qiehuan1_c"][1]/div[@class="page_n clearfix"]/a[text()="下一页"]'
+				   event="click"/>
+		</paging>
+
+		<field name="articleList1" xpath='./div[@class="hdNews clearfix"]' resultType="list">
+			<field name="url" xpath='./div/h5/a/@href' resultType="text"/>
+			<field name="title" xpath='./div/h5/a/text()' resultType="text"/>
+		</field>
+
+	</field>
+</field>

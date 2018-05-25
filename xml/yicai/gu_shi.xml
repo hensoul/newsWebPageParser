@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<field platform="yicai">
+	<field name="articleList" xpath='//*[@id="news_List"]/dl[@class="f-cb dl-item"]' resultType="list">
+		<events>
+			<event name="move_down" totalTimes="1" elementXpath="" waitingTimes="2"/>
+			<event name="click" totalTimes="5" elementXpath='//div[@id="divMore"]' waitingTimes="2"/>
+		</events>
+		<!--paging>
+			<field name="totalPage"  xpath='' value='5' resultType="text" />
+			<field name="totalTimes"  xpath='' value='5' resultType="text" />
+			<field name="totalCount"  xpath='' resultType="text"  regexp=""/>
+			<field name="pageSize" value=""/>
+			<field name="turnPageTrigger" waitingTimes="3"  xpath='//*[@id="divMore"]' event="click"/>
+		</paging-->
+
+		<field resultType="object">
+			<field name="url" xpath='./dd/h3/a/@href' resultType="text"/>
+			<field name="dateTime" xpath='./dd/h4/text()' resultType="text"/>
+		</field>
+
+	</field>
+</field>
